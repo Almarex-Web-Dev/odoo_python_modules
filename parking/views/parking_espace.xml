@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="form_view_parking_espace" model="ir.ui.view">
+        <field name="name">parking.espace.form.view</field>
+        <field name="model">parking.espace</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="espace_id"/>
+                            <field name="espace_state"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="tree_view_parking_espace" model="ir.ui.view">
+        <field name="name">parking.espace.tree.view</field>
+        <field name="model">parking.espace</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="espace_id"/>
+                <field name="espace_state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="parking_espace_action_id" model="ir.actions.act_window">
+        <field name="name">Parking espace</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">parking.espace</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p>
+                Espace de parking
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="root_menu_parking" name="Parking" sequence="10"/>
+    <!--    Premier table  -->
+
+    <menuitem id="menu_parking_espace" name="Espace" sequence="20"
+              parent="root_menu_parking" action="parking_espace_action_id"/>
+
+</odoo>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="customer_sales_order_template">
+        <t t-foreach="docs" t-as="sales">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <style>
+                            table {
+                            font-family: arial, sans-serif;
+                            border-collapse: collapse;
+                            width: 100%;
+                            margin-top: 100px;
+                            }
+
+                            td, th {
+                            border: 1px solid #dddddd;
+                            text-align: left;
+                            padding: 8px;
+                            }
+
+                            tr:nth-child(even) {
+                            <!-- background-color: #dddddd;-->
+                            background-color: #5c5c5c;
+                            color: #fff;
+                            }
+                        </style>
+                        <h2>
+                            <strong>Reference de Commande:</strong>
+                            <span t-field="sales.name"/>
+                        </h2>
+                        <div>
+                            <div>
+                                <h3>
+                                    <strong>Customer:</strong>
+                                    <span t-field="sales.partner_id"/>
+                                </h3>
+                                <h3>
+                                    <strong>Country:</strong>
+                                    <span t-field="sales.partner_id.country_id"/>
+                                </h3>
+                                <h3>
+                                    <strong>State:</strong>
+                                    <span t-field="sales.partner_id.state_id"/>
+                                </h3>
+                                <h3>
+                                    <strong>Street:</strong>
+                                    <span t-field="sales.partner_id.street"/>
+                                </h3>
+                                <h3>
+                                    <strong>Numero de Telephone:</strong>
+                                    <span t-field="sales.partner_id.phone"/>
+                                </h3>
+                            </div>
+
+                            <div t-if="sales.state == 'done'">
+                                <span>!!! Invoice has already been created!!!</span>
+                            </div>
+                        </div>
+
+                        <!--    SALES ORDER TABLE  -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>MTR</th>
+                                    <th>Ref. de commande</th>
+                                    <th>Produit(s)</th>
+                                    <th>Description</th>
+                                    <th>Quantite</th>
+                                    <th>Prix</th>
+                                    <th>currency_id</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="sales" t-value="sales.mapped('order_line_ids')"/>
+                                <tr t-foreach="sales" t-as="sale">
+                                    <td>
+                                        <span t-field="sale.SN"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="sale.order_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="sale.product_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="sale.description"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="sale.product_uom_qty"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="sale.price_unit"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="sale.currency_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="sale.price_subtotal"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

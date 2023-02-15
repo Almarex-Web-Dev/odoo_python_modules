@@ -1,0 +1,25 @@
+<odoo>
+    <template id="contact_template_page_id">
+        <t t-call="website.layout">
+            <t t-set="title">Contact</t>
+            <div class="container">
+                <h1 class="Heading_text">Contact us</h1>
+            </div>
+        </t>
+    </template>
+
+    <!-- About page menu -->
+    <record id="contact_page_id" model="website.page">
+        <field name="name">Contact Page</field>
+        <field name="website_published">True</field>
+        <field name="url">/contact</field>
+        <field name="view_id" ref="contact_template_page_id" />
+    </record>
+
+    <record id="contact_page_link" model="website.menu">
+        <field name="name">Contact</field>
+        <field name="page_id" ref="contact_page_id" />
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="sequence" type="int">30</field>
+    </record>
+</odoo>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- FORM VIEW DE FOURNISSEUR DES DIFFERENT PRODUIT  -->
+    <record id="form_view_produit_categorie_record" model="ir.ui.view">
+        <field name="name">produit.fournisseur.form.view</field>
+        <field name="model">produit.fournisseur</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="produit_tmpl_id"/>
+                            <field name="produit_name"/>
+                            <field name="product_code"/>
+                        </group>
+
+                        <group>
+                            <field name="min_qty"/>
+                            <field name="price"/>
+                            <field name="monnaie_id"/>
+                            <field name="retard"/>
+                        </group>
+                        <group>
+                            <field name="date_de_depart"/>
+                            <field name="date_de_fin"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    name = fields.Many2one('res.partner', string='Fournisseur', required=True)
+        produit_tmpl_id = fields.Many2one('produit.template', string='Article de Produit ', required=True)
+        product_name = fields.Char(related='produit_tmpl_id.name', string='Nom D\'article', readonly=True)
+        product_code = fields.Char(string='Code de Produit')
+        min_qty = fields.Float(string='Qunatite Minimal')
+        price = fields.Float(string='Prix')
+        monnaie_id = fields.Many2one('res.currency', string='Monnaie')
+        retard = fields.Integer(string='Délai de livraison')
+        date_de_depart = fields.Date(string='date de depart')
+        date_de_fin = fields.Date(string='Date de fin')-->
+
+    <!-- TREE VIEW DE FOURNISSEUR DES DIFFERENT PRODUIT  -->
+    <record id="tree_view_produit_fournisseur_record" model="ir.ui.view">
+        <field name="name">produit.fournisseur.tree.view</field>
+        <field name="model">produit.fournisseur</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="produit_tmpl_id"/>
+                <field name="produit_name"/>
+                <field name="product_code"/>
+                <field name="min_qty"/>
+                <field name="price"/>
+                <field name="monnaie_id"/>
+                <field name="date_de_depart"/>
+                <field name="date_de_fin"/>
+                <field name="retard"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_produit_fournissuer_record" model="ir.actions.act_window">
+        <field name="name">Fournisseur de Produit</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">produit.fournisseur</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{'search_default_new': True}</field>
+        <field name="help" type="html">
+            <p class="oe_nocontent_smilling_face">
+                Ajouter les information de Fournisseur
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="stock_root_menu_item" name="Stock" sequence="10"/>
+    <menuitem id="produite_fournisseur_menuitem" name="Fournisseur" sequence="10" parent="stock_root_menu_item"
+              action="action_produit_fournissuer_record"/>
+</odoo>

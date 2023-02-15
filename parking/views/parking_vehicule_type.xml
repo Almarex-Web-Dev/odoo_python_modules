@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="form_view_parking_vehicule_type" model="ir.ui.view">
+        <field name="name">parking.vehicule.type.form.view</field>
+        <field name="model">parking.vehicule.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="type"/>
+                        <field name="Montant"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="tree_view_parking_vehicule_type" model="ir.ui.view">
+        <field name="name">parking.vehicule.type.tree.view</field>
+        <field name="model">parking.vehicule.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="type"/>
+                <field name="Montant"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="parking_vehicule_type_action_id" model="ir.actions.act_window">
+        <field name="name">Type de Vehicule</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">parking.vehicule.type</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p>
+                Type de votre Vehicule
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="root_menu_parking" name="Parking" sequence="10"/>
+    <!--    Premier table  -->
+
+    <menuitem id="menu_parking_vehicule_type" name="Type de Vehicule" sequence="10"
+              parent="root_menu_parking" action="parking_vehicule_type_action_id"/>
+
+</odoo>

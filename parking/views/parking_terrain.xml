@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="form_view_parking_terrain" model="ir.ui.view">
+        <field name="name">parking.terrain.form.view</field>
+        <field name="model">parking.terrain</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1>Lucrecia Parking</h1>
+                    <br/>
+                    <br/>
+                    <group>
+                        <group>
+                            <field name="numero_de_plaque" placeholder="e.g Numero de la Plaque"/>
+                            <field name="espace_total"/>
+                            <field name="Espace_id"/>
+                        </group>
+                        <group>
+                            <field name="state"/>
+                            <field name="espace_disponible"/>
+                            <field name="heure_arriver"/>
+                            <field name="heure_de_départ"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="marque_id"/>
+                            <field name="model"/>
+                            <field name="vehicule_type"/>
+                            <field name="proprietaire"/>
+                            <field name="montant"/>
+                        </group>
+                        <group>
+                            <field name="image" widget="image"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--PARKING.TERRAIN TREE VIEW -->
+    <record id="tree_view_parking_terrain" model="ir.ui.view">
+        <field name="name">parking.terrain.tree.view</field>
+        <field name="model">parking.terrain</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="Espace_id"/>
+                <field name="state"/>
+                <field name="numero_de_plaque"/>
+                <field name="marque_id"/>
+                <field name="model"/>
+                <field name="vehicule_type"/>
+                <field name="proprietaire"/>
+                <field name="heure_arriver"/>
+                <field name="heure_de_départ"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_parking_terrain" model="ir.actions.act_window">
+        <field name="name">Terrain de Parking</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">parking.terrain</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{'search_default_new': True}</field>
+        <field name="help" type="html">
+            <p class="oe_nocontent_smilling_face">
+                Creer votre espace de parking
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="root_menu_parking" name="Parking" sequence="10"/>
+    <!--    Premier table  -->
+
+    <menuitem id="menu_parking_terrain" name="Parking" sequence="10"
+              parent="root_menu_parking" action="action_parking_terrain"/>
+</odoo>

@@ -1,0 +1,575 @@
+<odoo>
+    <!--  -->
+
+    <template id="available_properties">
+        <t t-call="website.layout">
+            <t t-set="title">Available Properties</t>
+            <section
+        class="section_proprietez"
+        style="background-image: url('https://tunatheme.com/tf/html/quarter-preview/quarter/img/bg/14.jpg');"
+      >
+                <div class=" container">
+                    <h1>Available Properties</h1>
+                    <div role="heading" class='heading_wrapper'>
+                        <a t-attf-href="/">
+                            <svg
+                class="icon_maison"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512"
+              >
+                                <path
+                  d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+                />
+                            </svg>
+                            <span>Home</span>
+                        </a>
+                        <span>></span>
+                        <span class="heading_texte">
+                            <span>
+                                Available Properties
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User properties request section -->
+
+            <section class="container properpty_details-section">
+                <div class="estate_details">
+                    <div class="estate_details_wrapper">
+                        <div class="layout_option">
+                            <span class="grid_icon">
+                                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                >
+                                    <path
+                    d="M416 32H32A32 32 0 0 0 0 64v384a32 32 0 0 0 32 32h384a32 32 0 0 0 32-32V64a32 32 0 0 0-32-32zm-32 64v128H256V96zm-192 0v128H64V96zM64 416V288h128v128zm192 0V288h128v128z"
+                  />
+                                </svg>
+                            </span>
+                            <!-- list Icon -->
+                            <span class="list_icon">
+                                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                                    <path
+                    d="M80 368H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm0-320H16A16 16 0 0 0 0 64v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16zm0 160H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm416 176H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"
+                  />
+                                </svg>
+                            </span>
+                        </div>
+                        <!-- montrer un texte avec le total de tous les resultat qui s'afficheront -->
+                        <span>Showing 1 -- 12 of 18 result</span>
+                        <!-- Default sorting -->
+                        <select id="item_sorting" name="sort_properties">
+                            <option value="">Default Sorting</option>
+                            <option
+                value="sort_by_popularity"
+              >sort by popularity
+                            </option>
+                            <option value="arrivals">sort by new arrivals
+                            </option>
+                            <option
+                value="high_price"
+              >sort by price: low to high
+                            </option>
+                            <option value="low_price">sort by price: high to low
+                            </option>
+                        </select>
+                    </div>
+                    <!-- form section -->
+                    <form method="#" action="#">
+                        <input type="text" placeholder="search your keyword" />
+                        <button type="submit">
+                            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                style="width:15px"
+              >
+                                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+                            </svg>
+
+                        </button>
+                    </form>
+
+                    <t t-foreach="estate_properties" t-as="prop_details">
+                        <div class="card_container">
+                            <div class="card_content">
+                                <div class="product_details">
+                                    <a t-attf-href="#">
+                                        <img
+                      t-attf-src="data:image/*;base64,{{prop_details.property_image}}"
+                    />
+                                    </a>
+                                </div>
+                                <div class="card_description">
+                                    <div class="card_header">
+                                        <p>
+                                            <t t-esc="prop_details.type.name" />
+                                        </p>
+                                        <!-- Le prix de apartement -->
+                                        <p>
+                                            <strong>$
+                                                <t
+                          t-esc="prop_details.expected_price"
+                        />
+                                            </strong>
+                                            /SELL
+                                        </p>
+                                    </div>
+                                    <a
+                    t-attf-href="/properties/available/{{ slug(prop_details) }}"
+                  >
+                                        <h1>
+                                            <t t-esc="prop_details.name" />
+                                        </h1>
+                                    </a>
+
+                                    <!-- location -->
+                                    <a
+                    t-attf-href="#"
+                    class="property_location"
+                  >
+                                        <span>
+                                            <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"
+                        style="width:10px"
+                      >
+                                                <path
+                          d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+                        />
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <t t-esc="prop_details.city" />,
+                                        </span>
+                                        <span>
+                                            <t
+                        t-esc="prop_details.state_id.name"
+                      />
+                                        </span>
+                                    </a>
+
+                                    <!-- Property details -->
+                                    <div style="color: #999;">
+                                        <span>
+                                            <t t-esc="prop_details.bedrooms" />
+                                            Beds
+                                        </span>
+                                        <span>
+                                            <t t-esc="prop_details.facades" />
+                                            Fac
+                                        </span>
+                                        <span>
+                                            <t
+                        t-esc="prop_details.living_area"
+                      />
+                                            Square ft
+                                        </span>
+                                    </div>
+                                    <!-- user profile -->
+                                    <div class="card_bottom_content_wrapper">
+                                        <div class="user_profile">
+                                            <!-- <img
+                            t-attf-src="data:image/*;base64,{{prop_details.seller_id.image_1920}}"
+                            alt="user Profile"
+                          /> -->
+                                            <div class="user_title">
+                                                <h6>
+                                                    <a t-attf-href="#">
+                                                        <t
+                              t-esc="prop_details.seller_id.name"
+                            />
+                                                    </a>
+                                                </h6>
+                                                <p>
+                                                    Estate Agents
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <!-- button groups -->
+                                        <div class="button_group">
+                                            <button
+                        type="button"
+                        class="btn_icon"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                      >
+                                                <svg
+                          style="width:15px"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 448 512"
+                        >
+                                                    <path
+                            d="M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z"
+                          />
+                                                </svg>
+                                            </button>
+
+                                            <!-- Heart Icons -->
+                                            <button
+                        type="button"
+                        class="btn_icon"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                      >
+                                                <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                        >
+                                                    <path
+                            d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                          />
+                                                </svg>
+                                            </button>
+
+                                            <!-- plus circle -->
+                                            <button
+                        type="button"
+                        class="btn_icon"
+                      >
+                                                <a t-attf-href="#">
+                                                    <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                          >
+                                                        <path
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+                            />
+                                                    </svg>
+                                                </a>
+                                            </button>
+                                        </div>
+                                        <!-- Button groups end here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+
+                <div class="filter_property">
+                    <div class="filter_heading">
+                        <h1>Advance Information</h1>
+                        <p>About 9,620 results (0.62 seconds)</p>
+                    </div>
+
+                    <div class="filters_container">
+                        <!-- property type -->
+                        <div class="property_type">
+                            <h4>Property Type</h4>
+                            <ul class="filter_list">
+                                <t t-foreach="prop_type" t-as="props">
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>
+                                                <t t-esc="props.name" />
+                                            </span>
+                                        </label>
+                                        <span class="categorey-no">3,640</span>
+                                    </li>
+                                </t>
+                            </ul>
+                        </div>
+
+                        <!-- Estate Amenities  -->
+                        <div class="estate_amenities">
+                            <h4>Amenities</h4>
+                            <ul class="filter_list">
+                                <t t-foreach="prop_type" t-as="type">
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <t t-esc="type.name" />
+                                        </label>
+                                        <span class="categorey-no">3,640</span>
+                                    </li>
+                                </t>
+                            </ul>
+                        </div>
+                        <!-- Amenities -->
+
+                        <div class="estate_prices">
+                            <h4>Price Range</h4>
+                            <ul class="filter_list">
+                                <!-- Low Budget  -->
+                                <li>
+                                    <label>
+                                        <input type="checkbox" />
+                                        <span>
+                                            Low Bud
+                                        </span>
+                                    </label>
+                                    <span
+                    class="categorey-no"
+                  >$5,000 - $10,000</span>
+                                </li>
+                                <!-- Medium Budget -->
+                                <li>
+                                    <label>
+                                        <input type="checkbox" />
+                                        <span>
+                                            Medium Bud
+                                        </span>
+                                    </label>
+                                    <span class="categorey-no">$10,000 - $30,000
+                                    </span>
+                                </li>
+                                <!-- High budget -->
+                                <li>
+                                    <label>
+                                        <input type="checkbox" />
+                                        <span>
+                                            High Bud
+                                        </span>
+                                    </label>
+                                    <span class="categorey-no">$30,000 Up</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="estate_amenities">
+                            <h4>Filter By Price</h4>
+                            <ul class="filter_list">
+                                <li>
+                                    <label>
+                                        <span>Your Range:</span>
+                                    </label>
+                                    <span class="range_value">$50 - $5000</span>
+                                </li>
+                                <input type="range" id="price_range" />
+                            </ul>
+                        </div>
+
+                        <!--  -->
+                        <div class="buy_rent_sell">
+                            <h4>Category</h4>
+                            <ul class="filter_list">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" />
+                                        <span>
+                                            Buying
+                                        </span>
+                                    </label>
+                                    <span class="categorey-no">4000</span>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" />
+                                        <span>
+                                            Renting
+                                        </span>
+                                    </label>
+                                    <span class="categorey-no">10,000</span>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" />
+                                        <span>
+                                            Selling
+                                        </span>
+                                    </label>
+                                    <span class="categorey-no">4000</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div
+                class="modal-header d-flex justify-content-end"
+              >
+
+                                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                >
+                                    <svg
+                    width="15px"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512"
+                  >
+                                        <path
+                      d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"
+                    />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <!-- <img
+                                  t-attf-src="data:image/*;base64,{{modal_details.property_image}}"
+                                /> -->
+                                        <h1>Heading</h1>
+                                    </div>
+                                    <div class="col-6">
+                                        <!-- <t t-esc="modal_details.name" /> -->
+                                        <p>Title</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </t>
+    </template>
+
+    <!--  detaile des produits immobiliers -->
+    <template id="product_details">
+        <t t-call="website.layout">
+            <t t-set="tittle">Single Products</t>
+            <section
+        class="section_proprietez"
+        style="background-image: url('https://tunatheme.com/tf/html/quarter-preview/quarter/img/bg/14.jpg'); margin-bottom: 0"
+      >
+                <div class=" container">
+                    <h1>Product Details</h1>
+                    <div role="heading" class='heading_wrapper'>
+                        <a t-attf-href="/">
+                            <svg
+                class="icon_maison"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512"
+              >
+                                <path
+                  d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+                />
+                            </svg>
+                            <span>Home</span>
+                        </a>
+                        <span>></span>
+                        <span class="heading_texte">
+                            <span>
+                                Product Details
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+
+            <div class="slider__container">
+                <div class="cover">
+                    <div class="inner_slider-wrapper">
+                        <div class="child box-1">
+                            <img
+                                src="https://tunatheme.com/tf/html/quarter-preview/quarter/img/img-slide/31.jpg"
+                                class="child_image"
+                                alt="slider image"
+                                />
+                        </div>
+
+                        <div class="child box-2">
+                            <img
+                                src="https://tunatheme.com/tf/html/quarter-preview/quarter/img/img-slide/35.jpg"
+                                class=" "
+                                alt="slider image"
+                                />
+                        </div>
+                        <!--       -->
+                        <div class="child box-3">
+                            <img
+                                src="https://tunatheme.com/tf/html/quarter-preview/quarter/img/img-slide/34.jpg"
+                                class="child_image"
+                                alt="slider image"
+                                />
+                        </div>
+
+                        <div class="child box-1">
+                            <img
+                                src="https://tunatheme.com/tf/html/quarter-preview/quarter/img/img-slide/31.jpg"
+                                class="child_image"
+                                alt="slider image"
+                                />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDER BUTTON DOWN HERE-->
+
+                <button class="prev" type="button">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                    >
+                        <path
+              d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+            />
+                    </svg>
+                </button>
+
+                <button class="next" type="button">
+                    <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+                        <path
+              d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+            />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Bootstrap slider section  -->
+            <!--            <div id="carouselExampleControlsNoTouching" class="carousel slide main_slider_container" data-bs-touch="false">-->
+            <!--                <div class="carousel-inner inner_slider_container">-->
+            <!--                    <div class="carousel-item active item-slider">-->
+            <!--                                    <img src="https://tunatheme.com/tf/html/quarter-preview/quarter/img/img-slide/31.jpg"-->
+            <!--                                         class="" alt="..."/>-->
+            <!--                    </div>-->
+
+            <!--                    <div class="carousel-item item-slider">-->
+            <!--                                    <img src="https://tunatheme.com/tf/html/quarter-preview/quarter/img/img-slide/35.jpg"-->
+            <!--                                         class=" " alt="..."/>-->
+            <!--                    </div>-->
+            <!--                    <div class="carousel-item">-->
+            <!--                                    <img src="https://tunatheme.com/tf/html/quarter-preview/quarter/img/img-slide/34.jpg"-->
+            <!--                                         class="" alt="..."/>-->
+            <!--                    </div>-->
+            <!--&lt;!&ndash;                    <div class="carousel-item">&ndash;&gt;-->
+            <!--&lt;!&ndash;                        <img src="https://tunatheme.com/tf/html/quarter-preview/quarter/img/img-slide/33.jpg"&ndash;&gt;-->
+            <!--&lt;!&ndash;                             class="d-block w-100" alt="..."/>&ndash;&gt;-->
+            <!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+            <!--                </div>-->
+
+            <!--                &lt;!&ndash; slider buttons   &ndash;&gt;-->
+            <!--                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"-->
+            <!--                        data-bs-slide="prev">-->
+            <!--                    <span class="carousel-control-prev-icon" aria-hidden="true"/>-->
+            <!--                    <span class="visually-hidden">Previous</span>-->
+            <!--                </button>-->
+            <!--                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching"-->
+            <!--                        data-bs-slide="next">-->
+            <!--                    <span class="carousel-control-next-icon" aria-hidden="true"/>-->
+            <!--                    <span class="visually-hidden">Next</span>-->
+            <!--                </button>-->
+
+            <!--                &lt;!&ndash;  slider buttons end here  &ndash;&gt;-->
+            <!--            </div>-->
+        </t>
+    </template>
+</odoo>
+<!-- Angle Up -->
+<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg> -->

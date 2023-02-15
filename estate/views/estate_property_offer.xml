@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_estate_property_offers_form" model="ir.ui.view">
+        <field name="name">Estate Property Offers</field>
+        <field name="model">estate.property.offers</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="price"/>
+                        <field name="partner_ids"/>
+                        <field name="validity"/>
+                        <field name="date_deadline"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--    -->
+    <record id="view_estate_property_offers_tree" model="ir.ui.view">
+        <field name="name">Estate Property Offers</field>
+        <field name="model">estate.property.offers</field>
+        <field name="arch" type="xml">
+            <tree decoration-danger="status == 'refuse'"
+                  decoration-success="status == 'accept'" editable="bottom">
+                <field name="price"/>
+                <field name="partner_ids"/>
+                <field name="validity"/>
+                <button name="accept" type="object" icon="fa-check"
+                        attrs="{'invisible': [('status','=','accept')]}" />
+
+                <button name="refuse" type="object" icon="fa-times"
+                        attrs="{'invisible': [('status','=','refuse')]}"/>
+
+                <field name="status" decoration-danger="status == 'refuse'"
+                       decoration-success="status == 'accept'"/>
+            </tree>
+        </field>
+    </record>
+    <record id="estate_property_offer_action" model="ir.actions.act_window">
+        <field name="name">Estate Property Offer</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">estate.property.offers</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="oe_nocontent_smilling_face">
+                Create your Estates profile
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="estate_property_offers_action_menu" name="Offers" parent="estate_property_type_1"
+              action="estate_property_offer_action"/>
+</odoo>

@@ -1,0 +1,25 @@
+<odoo>
+    <template id="about_template_page_id">
+        <t t-call="website.layout">
+            <t t-set="title">About Us</t>
+            <div class="container">
+                <h1 class="Heading_text">About Us</h1>
+            </div>
+        </t>
+    </template>
+
+    <!-- About page menu -->
+    <record id="about_page_id" model="website.page">
+        <field name="name">About Page</field>
+        <field name="website_published">True</field>
+        <field name="url">/about</field>
+        <field name="view_id" ref="about_template_page_id" />
+    </record>
+
+    <record id="about_page_link" model="website.menu">
+        <field name="name">About</field>
+        <field name="page_id" ref="about_page_id" />
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="sequence" type="int">20</field>
+    </record>
+</odoo>

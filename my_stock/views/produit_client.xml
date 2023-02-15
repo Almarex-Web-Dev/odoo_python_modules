@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- FORM VIEW DE FOURNISSEUR DES DIFFERENT PRODUIT  -->
+    <record id="form_view_produit_client_record" model="ir.ui.view">
+        <field name="name">res.partner.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="street"/>
+                            <field name="street2"/>
+                            <field name="zip"/>
+                        </group>
+                        <group>
+                            <field name="city"/>
+                            <field name="state_id"/>
+                            <field name="country_id"/>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <field name="phone"/>
+                            <field name="mobile"/>
+                            <field name="fax"/>
+                            <field name="website"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- TREE VIEW DE FOURNISSEUR DES DIFFERENT PRODUIT  -->
+    <record id="tree_view_produit_client_record" model="ir.ui.view">
+        <field name="name">res.partner.tree.view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="street"/>
+                <field name="zip"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="mobile"/>
+                <field name="website"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_produit_client_record" model="ir.actions.act_window">
+        <field name="name">Client de Produit</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{'search_default_new': True}</field>
+        <field name="help" type="html">
+            <p class="oe_nocontent_smilling_face">
+                Saisissez l'information de Client
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="stock_root_menu_item" name="Stock" sequence="10"/>
+    <menuitem id="produite_client_menuitem" name="Client" sequence="10" parent="stock_root_menu_item"
+              action="action_produit_client_record"/>
+</odoo>

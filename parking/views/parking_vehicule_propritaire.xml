@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="form_view_parking_vehicule_proprietaire" model="ir.ui.view">
+        <field name="name">parking.vehicule.proprietaire.form.view</field>
+        <field name="model">parking.vehicule.proprietaire</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="address"/>
+                        <field name="numero_telephone"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--PARKING.TERRAIN TREE VIEW -->
+    <record id="tree_view_parking_vehicule_proprietaire" model="ir.ui.view">
+        <field name="name">parking.vehicule.proprietaire.tree.view</field>
+        <field name="model">parking.vehicule.proprietaire</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="address"/>
+                <field name="numero_telephone"/>
+                <!--                <field name="parking_ids"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_parking_vehicule_properitaire" model="ir.actions.act_window">
+        <field name="name">Proprietaire de Vehicule</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">parking.vehicule.proprietaire</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{'search_default_new': True}</field>
+        <field name="help" type="html">
+            <p class="oe_nocontent_smilling_face">
+                saisissez l'information de proprietaire
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="root_menu_parking" name="Parking" sequence="10"/>
+    <!--    Premier table  -->
+
+    <menuitem id="menu_parking_vehicule_properitaire" name="Proprietaire" sequence="0"
+              parent="root_menu_parking" action="action_parking_vehicule_properitaire"/>
+</odoo>

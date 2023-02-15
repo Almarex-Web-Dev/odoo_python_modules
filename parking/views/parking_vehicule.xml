@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="form_view_parking_vehicule" model="ir.ui.view">
+        <field name="name">parking.vehicule.form.view</field>
+        <field name="model">parking.vehicule</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <!--                        <field name="vehicule_name"/>-->
+                        <field name="marque"/>
+                        <field name="model"/>
+                        <field name="numero_de_plaque"/>
+                        <field name="vehicule_type"/>
+                        <field name="owner_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="tree_view_parking_vehicule" model="ir.ui.view">
+        <field name="name">parking.vehicule.tree.view</field>
+        <field name="model">parking.vehicule</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="marque"/>
+                <field name="model"/>
+                <field name="numero_de_plaque"/>
+                <field name="vehicule_type"/>
+                <field name="owner_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="parking_vehicule_action_id" model="ir.actions.act_window">
+        <field name="name">Parking Vehicule</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">parking.vehicule</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p>
+                saisisser les information de votre vehicules
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="root_menu_parking" name="Parking" sequence="10"/>
+    <!--    Premier table  -->
+
+    <menuitem id="menu_parking_vehicule" name="Vehicules" sequence="10"
+              parent="root_menu_parking" action="parking_vehicule_action_id"/>
+
+</odoo>

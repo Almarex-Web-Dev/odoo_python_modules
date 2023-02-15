@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--    Tree view -->
+    <record id="view_estate_property_type_tree" model="ir.ui.view">
+        <field name="name">estate_property_type_tree</field>
+        <field name="model">estate.property.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <!--    form view -->
+    <record id="view_estate_property_type" model="ir.ui.view">
+        <field name="name">estate_property_type_form</field>
+        <field name="model">estate.property.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="offer_apartment" type="object" icon="fa-money" string="aprt count"
+                                attrs="{'invisible':[('name','=','House')]}">
+                            <field name="nombre_apartement"/>
+                        </button>
+                    </div>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="offers_house" type="object" icon="fa-money" string="house count"
+                                attrs="{'invisible':[('name','=','Apartment')]}">
+                            <field name="nombre_house"/>
+                        </button>
+                    </div>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <notebook>
+                        <page string="Properties">
+                            <group>
+                                <field name="property_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="expected_price"/>
+                                        <field name="status"/>
+                                        <!--                                        <field name="sequence" widget="handle"/>-->
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--    -->
+    <record id="estate_property_type_action" model="ir.actions.act_window">
+        <field name="name">Estate Property Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">estate.property.type</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Add Your Property Type
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="estate_property_type_1" name="settings" sequence="10"
+              parent="estate_model_property_menu_root"/>
+
+    <menuitem id="estate_property_type_2" name="Property Type" parent="estate_property_type_1"
+              action="estate_property_type_action"/>
+</odoo>

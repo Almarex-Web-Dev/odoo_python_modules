@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- scss & JS Assets -->
+        <template id="assets_frontend" name="Frontend Assets" inherit_id="website.assets_frontend">
+            <xpath expr="." position="inside">
+                <link href="/estate/static/src/css/layout.css" rel="stylesheet" />
+                <script type="text/javascript" src="/estate/static/src/js/estate.js" />
+            </xpath>
+        </template>
+
+        <template id="assets_backend" name="Backend Assets" inherit_id="website.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/estate/static/src/js/estate.js" />
+            </xpath>
+        </template>
+    </data>
+</odoo>
+
+        <!--
+                import xmlrpclib
+                from openerp.exceptions import except_orm
+                url = "http://localhost:8009"
+                db = "your_db_name"
+                user = "abc@gmail.com"
+                pwd = "1234"
+
+                url = 'http://localhost:8069' or ''
+                try:
+                    common = xmlrpclib.ServerProxy('{}/xmlrpc/2/common'.format(url), allow_none=1)
+                    uid = common.authenticate(db, user, pwd, {})
+                    if uid == 0:
+                        raise Exception('Credentials are wrong for remote system access')
+                    else:
+                        message = 'Connection Stablished Successfully'
+                except Exception as e:
+                    raise except_orm(_('Remote system access Issue \n '), _(e))
+                print('******message*****',message)
+                return uid, url, db, common, pwd
+
+                -->

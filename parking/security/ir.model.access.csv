@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_user_parking_terrain,access.parking.terrain,model_parking_terrain,parking.parking_group_user,1,1,1,1
+access_manager_parking_terrain,access.parking.terrain,model_parking_terrain,parking.parking_group_manager,1,1,1,1
+access_user_parking_espace,access.parking.espace,model_parking_espace,parking.parking_group_user,1,1,1,1
+access_manager_parking_espace,access.parking.espace,model_parking_espace,parking.parking_group_manager,1,1,1,1
+access_user_parking_vehicule_proprietaire,access.parking.vehicule.proprietaire,model_parking_vehicule_proprietaire,parking.parking_group_user,1,1,1,1
+access_manager_parking_vehicule_proprietaire,access.parking.vehicule.proprietaire,model_parking_vehicule_proprietaire,parking.parking_group_manager,1,1,1,1
+access_user_parking_vehicule,access.parking.vehicule,model_parking_vehicule,parking.parking_group_user,1,1,1,1
+access_manager_parking_vehicule,access.parking.vehicule,model_parking_vehicule,parking.parking_group_manager,1,1,1,1
+access_user_parking_vehicule_type,access.parking.vehicule.type,model_parking_vehicule_type,parking.parking_group_user,1,1,1,1
+access_manager_parking_vehicule_type,access.parking.vehicule.type,model_parking_vehicule_type,parking.parking_group_manager,1,1,1,1

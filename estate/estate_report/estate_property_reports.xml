@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report
+            id="report_estate_property"
+            model="estate.property"
+            string="Property Offers"
+            name="estate.report_estate_property_view"
+            file="estate.report_estate_property_view"
+            report_type="qweb-pdf"/>
+
+
+
+    <!--    <template id="report_estate_property_view"> -->
+    <!--    <t t-call="web.html_container"> -->
+    <!--            <t t-call="web.internal_layout">-->
+    <!--                <t t-foreach="docs" t-as="o">-->
+    <!--                    <div>-->
+    <!--                        <style>-->
+    <!--                            .city {-->
+    <!--                            background-color: whitesmoke;-->
+    <!--                            color: black;-->
+    <!--                            border: 2px solid black;-->
+    <!--                            margin: 20px;-->
+    <!--                            padding: 20px;-->
+    <!--                            }-->
+    <!--                        </style>-->
+    <!--                        <style>-->
+    <!--                            table, th, td {-->
+    <!--                            border: 20px solid white;-->
+    <!--                            border-collapse: collapse;-->
+    <!--                            th {-->
+    <!--                            padding-top: 10px;-->
+    <!--                            padding-left: 10px;-->
+    <!--                            padding-right: 10px;-->
+
+    <!--                            }-->
+
+    <!--                            }-->
+    <!--                        </style>-->
+    <!--                    </div>-->
+    <!--                    <br/>-->
+    <!--                    <br/>-->
+    <!--                    <header>-->
+    <!--                        <div class="city">-->
+    <!--                            <h1 style="font-size:30px;">-->
+    <!--                                <center>-->
+    <!--                                    FICHE DE LOCATION DE VEHICULE-->
+    <!--                                </center>-->
+    <!--                            </h1>-->
+    <!--                        </div>-->
+    <!--                    </header>-->
+    <!--                    <br/>-->
+    <!--                    <br/>-->
+    <!--                    <table style="width:100%">-->
+    <!--                        <pre>-->
+    <!--                            <tr>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">NOM ET PRENOM(S)</span>-->
+    <!--                                </th>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">:</span>-->
+    <!--                                </th>-->
+    <!--                                <td>-->
+    <!--                                    <h2>-->
+    <!--                                        <span style="font-size:20px;" t-field="o.locataire.name"/>-->
+    <!--                                    </h2>-->
+    <!--                                </td>-->
+    <!--                            </tr>-->
+    <!--                            <tr>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">TELEPHONE</span>-->
+    <!--                                </th>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">:</span>-->
+    <!--                                </th>-->
+    <!--                                <td>-->
+    <!--                                    <h2>-->
+    <!--                                        <span style="font-size:20px;" t-field="o.locataire.phone"/>-->
+    <!--                                    </h2>-->
+    <!--                                </td>-->
+    <!--                            </tr>-->
+    <!--                            <tr>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">VEHICULE</span>-->
+    <!--                                </th>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">:</span>-->
+    <!--                                </th>-->
+    <!--                                <td>-->
+    <!--                                    <h2>-->
+    <!--                                        <span style="font-size:20px;" t-field="o.vehicule_id.name"/>-->
+    <!--                                    </h2>-->
+    <!--                                </td>-->
+    <!--                            </tr>-->
+    <!--                            <tr>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">DATE DE DEBUT DE LA LOCATION</span>-->
+    <!--                                </th>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">:</span>-->
+    <!--                                </th>-->
+    <!--                                <td>-->
+    <!--                                    <h2>-->
+    <!--                                        <span style="font-size:20px;" t-field="o.date_debut_location"/>-->
+    <!--                                    </h2>-->
+    <!--                                </td>-->
+    <!--                            </tr>-->
+    <!--                            <tr>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">DATE DE FIN DE LA LOCATION</span>-->
+    <!--                                </th>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">:</span>-->
+    <!--                                </th>-->
+    <!--                                <td>-->
+    <!--                                    <h2>-->
+    <!--                                        <span style="font-size:20px;" t-field="o.date_fin_location"/>-->
+    <!--                                    </h2>-->
+    <!--                                </td>-->
+    <!--                            </tr>-->
+    <!--                            <tr>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">MONTANT JOURNALIER</span>-->
+    <!--                                </th>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">:</span>-->
+    <!--                                </th>-->
+    <!--                                <td>-->
+    <!--                                    <h2>-->
+    <!--                                        <span style="font-size:20px;" t-field="o.montant_location_jour"/>-->
+    <!--                                        <span></span>-->
+    <!--                                        <span style="font-size:20px;">CFA</span>-->
+    <!--                                    </h2>-->
+    <!--                                </td>-->
+    <!--                            </tr>-->
+    <!--                            <tr>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">DUREE DE LA LOCATION</span>-->
+    <!--                                </th>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">:</span>-->
+    <!--                                </th>-->
+    <!--                                <td>-->
+    <!--                                    <h2>-->
+    <!--                                        <span style="font-size:20px;" t-field="o.duree_location"/>-->
+    <!--                                        <span></span>-->
+    <!--                                        <span style="font-size:20px;">JOUR(S)</span>-->
+    <!--                                    </h2>-->
+    <!--                                </td>-->
+    <!--                            </tr>-->
+    <!--                            <tr>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">MONTANT TOTAL DE LA LOCATION</span>-->
+    <!--                                </th>-->
+    <!--                                <th>-->
+    <!--                                    <span style="font-size:20px;">:</span>-->
+    <!--                                </th>-->
+    <!--                                <td>-->
+    <!--                                    <h2>-->
+    <!--                                        <span style="font-size:20px;" t-field="o.montant_location"/>-->
+    <!--                                        <span></span>-->
+    <!--                                        <span style="font-size:20px;">CFA</span>-->
+    <!--                                    </h2>-->
+    <!--                                </td>-->
+    <!--                            </tr>-->
+    <!--                        </pre>-->
+    <!--                    </table>-->
+    <!--                </t>-->
+    <!--            </t>-->
+    <!--        </t>-->
+    <!--    </template>-->
+</odoo>

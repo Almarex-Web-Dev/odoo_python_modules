@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- FORM VIEW DE CATEGORIES DES DIFFERENT PRODUIT  -->
+    <record id="form_view_produit_categorie_record" model="ir.ui.view">
+        <field name="name">produit.categorie.form.view</field>
+        <field name="model">produit.categorie</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="name"/>
+                    <field name="parent_id"/>
+                    <field name="produits_ids"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- TREE VIEW DE CATEGORIES DES DIFFERENT PRODUIT  -->
+    <record id="tree_view_produit_categorie_record" model="ir.ui.view">
+        <field name="name">produit.categorie.tree.view</field>
+        <field name="model">produit.categorie</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+<!--                <field name="parent_id"/>-->
+                <field name="produits_ids"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- ACTION DE CATEGORIES DES DIFFERENT PRODUIT  -->
+    <record id="produit_categorie_action_record" model="ir.actions.act_window">
+        <field name="name">Categorie de Produit</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">produit.categorie</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{'search_default_new': True}</field>
+        <field name="help" type="html">
+            <p class="oe_nocontent_smilling_face">
+                Creer Les Categorie de Votre Produit
+            </p>
+        </field>
+    </record>
+
+
+    <!-- MENU ITEM EST ICI -->
+    <menuitem id="stock_root_menu_item" name="Stock" sequence="10"/>
+    <menuitem id="produite_categorie_menuitem" name="Categorie" sequence="10" parent="stock_root_menu_item"
+              action="produit_categorie_action_record"/>
+</odoo>

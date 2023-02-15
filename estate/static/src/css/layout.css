@@ -1,0 +1,634 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #5c727d;
+}
+body {
+  background: #fff;
+}
+.hero_bg {
+  background-color: #ededed;
+  width: 100%;
+  height: auto;
+}
+.container_section {
+  width: 90%;
+  margin: 0 0 0 auto;
+}
+
+.contenu_wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 3.5rem;
+}
+.heading_wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+/* Le premiere heading texte sur la page */
+.heading_texte {
+  font-size: 18px;
+  color: #071c1f;
+  font-weight: bold;
+}
+/* le icon en maison */
+.icon_maison {
+  width: 24px;
+  fill: #ff5a3c;
+}
+
+/* le div de contenu_description */
+.contenu_description {
+  position: relative;
+  user-select: none;
+}
+
+/* le Heading tag ici */
+.contenu_description h1 {
+  font-size: 65px;
+  font-weight: bold;
+  color: #071c1f;
+  line-height: 1;
+  margin: 15px 0 20px 0;
+}
+
+/* le texte de description */
+.texte_description {
+  width: 450px;
+  color: #5c727d;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 30px;
+}
+
+/* la ligne vertical juste avant le text de description  */
+.texte_description::after {
+  content: '';
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #282829;
+}
+
+/* image hero */
+.image_hero img {
+  width: 607px;
+  height: 100%;
+}
+
+/* le bouton plat */
+.flat_button {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  line-height: 60px;
+  text-align: center;
+  height: 60px;
+  position: relative;
+  text-decoration: cadetblue;
+  border: none;
+  outline: none;
+}
+.flat_button div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.flat_button div span.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #ff5a3c;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.flat_button:hover span.bg {
+  width: 0%;
+}
+
+.flat_button div span.base {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px solid #ff5a3c;
+}
+.flat_button:hover span.base {
+  border: 1px solid #071c1f;
+}
+
+.flat_button div span.texte {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  color: #fff;
+}
+
+.flat_button:hover span.texte {
+  color: #071c1f;
+}
+
+/* le play bouton ici */
+
+.bouton_action {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.play_button {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.227);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play_button svg {
+  width: 15px;
+  fill: #ff5a3c;
+}
+
+/* form_wrapper */
+
+.form_wrapper {
+  margin: 100px auto;
+}
+
+.form_group_wrapper {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.155);
+  padding: 40px;
+  border-radius: 5px;
+}
+
+.form_group_wrapper form {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+}
+
+.form_group_wrapper form select {
+  height: 60px;
+  line-height: 58px;
+  min-width: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+
+  background-color: #fff;
+  border-radius: 5px;
+  border: solid 1px #e8e8e8;
+  padding-left: 18px;
+  padding-right: 30px;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.form_group_wrapper form select:focus {
+  border-color: #999;
+}
+
+option {
+  border: none;
+  padding: 20px;
+  background: #e8e8e8;
+  height: 400px;
+}
+
+/* 
+.form_group_wrapper form select option:hover {
+  background-color: #d8d7d7;
+} */
+
+/*Available properties section here ******** be careful */
+
+.section_proprietez {
+  width: 100%;
+  height: 326px;
+  background-size: cover;
+  background-position: center;
+  margin: 50px 0;
+  display: flex;
+  flex-direction: columns;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.section_proprietez h1 {
+  color: #071c1f;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.section_proprietez .heading_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 14px;
+}
+
+.section_proprietez .heading_wrapper svg {
+  width: 18px;
+}
+
+.section_proprietez .heading_wrapper a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.738rem;
+  font-weight: bold;
+  color: #999;
+}
+
+.section_proprietez .heading_wrapper a:hover {
+  color: #ff5a3c;
+  transition: all 250ms linear;
+}
+
+.section_proprietez .heading_texte {
+  font-size: 14px;
+}
+
+/* Property details section */
+.properpty_details-section {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 2rem;
+  margin-bottom: 50px;
+}
+
+/* estate_details */
+.estate_details {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* estate_details_wrapper */
+.estate_details_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 50px;
+}
+
+/* layout_option */
+.layout_option {
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.layout_option span svg {
+  width: 25px;
+  fill: #5c727d;
+  transition: all 250ms linear;
+}
+.layout_option span svg:hover {
+  fill: #ff5a3c;
+}
+
+.layout_option span.grid_icon svg {
+  fill: #ff5a3c;
+}
+
+/* Estate Properties sorting */
+.estate_details_wrapper select {
+  outline: none;
+  border: 1px solid #5c727d;
+  padding: 10px;
+}
+
+.estate_details_wrapper select:focus {
+  outline: none;
+  border: none;
+  border: 1px solid #5c727d;
+}
+
+/* estate_details form element */
+.estate_details form {
+  display: flex;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.estate_details form input {
+  width: 93%;
+  outline: none;
+  padding: 10px 0 10px 14px;
+  border: 1px solid #5c727d;
+  background: #f2f6f7;
+  font-weight: 600px;
+  font-size: 14px;
+}
+.estate_details form button {
+  width: 7%;
+  outline: none;
+  border: none;
+  padding: 7px;
+  background: #ff5a3c;
+}
+.estate_details form button svg {
+  fill: #fff;
+}
+
+/* card_container */
+.estate_details .card_container {
+  width: 100%;
+  height: auto;
+  padding: 30px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.34);
+  background: #fff;
+  margin-bottom: 50px;
+}
+
+.estate_details .card_container .card_content {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.estate_details .product_details {
+  width: 283px;
+  height: 216px;
+  overflow: hidden;
+  /* border: 2px solid #ff5a3c; */
+}
+
+.estate_details .product_details img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease 0s;
+}
+
+.estate_details .card_container:hover img {
+  transform: scale(1.1);
+  transition: all 350ms ease-in-out;
+}
+
+/* card_header */
+.card_description {
+  width: 100%;
+}
+.card_description .card_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_header p,
+p strong {
+  color: #ff5a3c;
+}
+.card_header p:first-child {
+  text-transform: uppercase;
+}
+
+/* card_description */
+.card_description h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #071c1f;
+  /* line-height: 2; */
+}
+
+/* property_location */
+.property_location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 15px;
+}
+
+/* button_group */
+.button_group {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.button_group button {
+  width: 25px;
+  height: 25px;
+  border: none;
+  outline: none;
+  background: #e4e4e4;
+  padding: 5px;
+  transition: all 250ms ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button_group button svg {
+  width: 16px;
+  fill: #999;
+}
+
+.button_group button:hover {
+  background-color: #ff5a3c;
+}
+
+.button_group button:hover svg {
+  fill: #fff;
+}
+
+/* card_bottom_content_wrapper */
+.card_bottom_content_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* filter estate properties */
+
+.filters_container {
+  width: 100%;
+  height: auto;
+  padding: 25px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.155);
+}
+.filters_container h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #071c1f;
+  margin-bottom: 1.5rem;
+}
+
+.filter_list {
+  list-style: none;
+}
+
+.filter_list li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #5c727d;
+  font-weight: 500;
+}
+
+.filter_list li label {
+  display: flex;
+  gap: 1rem;
+  /* display: inline-block; */
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter_list li label input[type='checkbox'] {
+  appearance: none;
+  background-color: #fff;
+  position: relative;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 1px solid currentColor;
+  border-radius: 0.15em;
+  display: grid;
+  place-content: center;
+  /* background-color: #ff5a3c; */
+}
+.filter_list li label input[type='checkbox']:hover {
+  background-color: #ff5a3c;
+}
+.filter_list li label input[type='checkbox']:checked {
+  background-color: #ff5a3c;
+}
+input[type='checkbox']::before {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #fff;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type='checkbox']:checked::before {
+  transform: scale(1);
+}
+
+/* SLIDER CONTAINER custom_slider_container */
+
+.slider__container {
+  width: 100%;
+  height: 440.58px;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.inner_slider-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.inner_slider-wrapper .child {
+  width: 849px;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  /* position: absolute; */
+  transition: all 250ms linear;
+}
+
+.inner_slider-wrapper::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.inner_slider-wrapper .child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 350ms ease-in-out;
+}
+
+.inner_slider-wrapper .child:hover img {
+  transform: scale(1.1);
+  transition: all 350ms ease-in-out;
+}
+
+.slider__container button {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  outline: none;
+  border: none;
+  background: #fff;
+  top: 50%;
+  border-radius: 50%;
+  padding: 10px;
+  opacity: 0;
+  z-index: 999;
+}
+
+.slider__container button svg {
+  width: 20px;
+}
+.slider__container button:hover {
+  background: #ff5a3c;
+}
+.slider__container button:hover svg {
+  width: 20px;
+  fill: #fff;
+}
+
+.slider__container:hover button {
+  opacity: 1;
+  transition: all 350ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.slider__container:hover button.prev {
+  left: 5px;
+  transform: translateX(30px);
+}
+.slider__container:hover button.next {
+  right: 5px;
+  transform: translateX(-30px);
+}

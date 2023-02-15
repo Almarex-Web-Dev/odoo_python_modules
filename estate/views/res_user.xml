@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Res.users form view    -->
+    <record id="view_res_users_form" model="ir.ui.view">
+        <field name="name">res.users.form.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_simple_form"/>
+        <field name="arch" type="xml">
+            <sheet>
+                <notebook>
+                    <page string="Access Rights"></page>
+                    <page string="Preferences"></page>
+                    <page string="Real Estate Properties">
+                        <field name="property_ids">
+                            <tree editable="bottom" decoration-info="state == 'new'" decoration-muted="state == 'sold'"
+                                  decoration-success="state == 'offer'">
+                                <field name="name"/>
+                                <field name="type"/>
+                                <field name="postcode"/>
+                                <field name="tags_ids" widget="many2many_tags"/>
+                                <field name="bedrooms"/>
+                                <field name="living_area"/>
+                                <field name="expected_price"/>
+                                <field name="selling_price"/>
+                                <field name="date_availability" optional="hide"/>
+                                <field name="property_type_id"/>
+                                <field name="state" decoration-info="state == 'new'" decoration-muted="state == 'sold'"
+                                       decoration-success="state == 'offer'"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </sheet>
+        </field>
+    </record>
+    <!--    <record id="view_res_users_form" model="ir.ui.view">-->
+    <!--        <field name="name">Res Users</field>-->
+    <!--        <field name="model">res.users</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <form>-->
+    <!--                <sheet>-->
+    <!--                    <field name="name"/>-->
+    <!--                </sheet>-->
+    <!--            </form>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+
+    <!-- Res,user tree view    -->
+    <record id='view_res_user_tree' model="ir.ui.view">
+        <field name="name">estate.property.tree.view</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <!--    -->
+    <record id="action_res_users" model="ir.actions.act_window">
+        <field name="name">Users</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.users</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_nocontent_smilling_face">
+                Offers
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="estate_res_users_action" name="Users" sequence="10"
+              parent="estate_property_type_1" action="action_res_users"/>
+
+</odoo>

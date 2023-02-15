@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <report
+            id="parking_terrain_report"
+            model="parking.terrain"
+            string="Parking Report"
+            name="parking.parking_terrain_report_template"
+            file="parking.parking_terrain_report_template"
+            report_type="qweb-pdf"/>
+</odoo>

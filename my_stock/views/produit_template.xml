@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- FORM VIEW DE CATEGORIES DES DIFFERENT PRODUIT  -->
+    <record id="form_view_produit_template_record" model="ir.ui.view">
+        <field name="name">produit.template.form.view</field>
+        <field name="model">produit.template</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="categ_id"/>
+                            <field name="type"/>
+                            <field name="description"/>
+                            <field name="list_price"/>
+                            <field name="prix_standard"/>
+<!--                            <field name="qty_disponible"/>-->
+                            <field name="produit_id"/>
+                        </group>
+                        <group>
+                            <field name="image" widget="image"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--
+                                         name = fields.Char(string='Product Name', required=True)
+                                               # seller_ids = fields.One2many('product.supplierinfo', 'product_tmpl_id', string='Vendors')
+                            # buyer_id = fields.Many2one('product.buyer', string='Buyer')-->
+
+    <!-- TREE VIEW DE CATEGORIES DES DIFFERENT PRODUIT  -->
+    <record id="tree_view_produit_template_record" model="ir.ui.view">
+        <field name="name">produit.template.tree.view</field>
+        <field name="model">produit.template</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <!--<field name="categ_id"/> -->
+                <field name="type"/>
+                <field name="description"/>
+                <field name="list_price"/>
+                <field name="prix_standard"/>
+<!--                <field name="qty_disponible"/>-->
+                <field name="produit_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- ACTION DE CATEGORIES DES DIFFERENT PRODUIT  -->
+    <record id="produit_template_action_record" model="ir.actions.act_window">
+        <field name="name">L'artice de Produit</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">produit.template</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{'search_default_new': True}</field>
+        <field name="help" type="html">
+            <p class="oe_nocontent_smilling_face">
+                Ajouter votre Article
+            </p>
+        </field>
+    </record>
+
+
+    <!-- MENU ITEM EST ICI -->
+    <menuitem id="stock_root_menu_item" name="Stock" sequence="10"/>
+    <menuitem id="produite_template_menuitem" name="Articles" sequence="10" parent="stock_root_menu_item"
+              action="produit_template_action_record"/>
+</odoo>

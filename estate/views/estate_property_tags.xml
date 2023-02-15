@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_estate_property_tags_tree" model="ir.ui.view">
+        <field name="name">estate_property_tags_tree</field>
+        <field name="model">estate.property.tags</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--    form view for estate property tags-->
+    <record id="view_estate_property_tags_forms" model="ir.ui.view">
+        <field name="name">estate_property_tags_form</field>
+        <field name="model">estate.property.tags</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="color" widget="color_picker" />
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+
+    </record>
+
+    <record id="estate_property_tags" model="ir.actions.act_window">
+        <field name="name">Estate Property Tags</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">estate.property.tags</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p>
+                Add a tag to your model
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="estate_property_tags_menu" name="Property Tags" parent="estate_property_type_1"
+              action="estate_property_tags"/>
+    <!--    <menuitem id="estate_property_tags_menu" name="Property Tags" parent="estate_property_tags_menu" action="estate_property_tags"/>-->
+</odoo>

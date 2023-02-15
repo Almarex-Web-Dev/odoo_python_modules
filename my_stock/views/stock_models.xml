@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- FORM VIEW DE CATEGORIES DES DIFFERENT PRODUIT  -->
+    <record id="form_view_stock_models_record" model="ir.ui.view">
+        <field name="name">stock.models.form.view</field>
+        <field name="model">stock.models</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="fournisseur"/>
+                        <field name="product_id"/>
+                        <field name="quantite"/>
+                        <field name="minimum_stock_level"/>
+                        <field name="maximum_stock_level"/>
+                        <field name="reorder_level"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- TREE VIEW DE CATEGORIES DES DIFFERENT PRODUIT  -->
+    <record id="tree_view_produit_template_record" model="ir.ui.view">
+        <field name="name">stock.models.tree.view</field>
+        <field name="model">stock.models</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_id"/>
+                <field name="fournisseur"/>
+                <field name="quantite"/>
+                <field name="minimum_stock_level"/>
+                <field name="maximum_stock_level"/>
+                <field name="reorder_level"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- ACTION DE CATEGORIES DES DIFFERENT PRODUIT  -->
+    <record id="stock_models_action_record" model="ir.actions.act_window">
+        <field name="name">Stock Models</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">stock.models</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{'search_default_new': True}</field>
+        <field name="help" type="html">
+            <p class="oe_nocontent_smilling_face">
+                Ajouter les produit dans le Stock
+            </p>
+        </field>
+    </record>
+
+
+    <!-- MENU ITEM EST ICI -->
+    <menuitem id="stock_root_menu_item" name="Stock" sequence="10"/>
+
+    <menuitem id="stock_models_menuitem" name="Stock" sequence="10" parent="stock_root_menu_item"
+              action="stock_models_action_record"/>
+</odoo>
