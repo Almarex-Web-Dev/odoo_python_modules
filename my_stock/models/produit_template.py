@@ -1,3 +1,5 @@
+import uuid
+
 from odoo import fields, models, api
 
 
@@ -18,7 +20,7 @@ class ProduitTemplate(models.Model):
     prix_standard = fields.Integer(string='Prix standard')
     # qty_disponible = fields.Integer(string='Quantiter de produit')
     image = fields.Binary(string='Image')
-    produit_id = fields.Char(string='Produit ID')
+    produit_id = fields.Char(string='Produit ID', default=lambda self: str(uuid.uuid4()))
     seller_ids = fields.One2many('produit.fournisseur', 'produit_tmpl_id', string='Fournisseur')
     # buyer_id = fields.Many2one('product.buyer', string='Buyer')
 

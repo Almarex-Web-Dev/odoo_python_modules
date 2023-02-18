@@ -8,14 +8,14 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                    <field class="oe_highlight" name="state" options="{'clickable': '1'}" widget="statusbar"/>
                 </header>
                 <sheet>
                     <group>
                         <group>
-                            <field name="name"/>
+                            <field name="ref_commande"/>
                             <field name="partner_id"/>
-                            <!--                            <field name="order_line_ids"/>-->
+                            <!--<field name="order_line_ids"/>-->
                             <field name="date_order"/>
                             <field name="state"/>
                         </group>
@@ -25,7 +25,8 @@
                             <field name="order_line_ids">
                                 <tree editable="bottom">
                                     <field name="SN" readonly="1"/>
-                                    <field name="order_id"/>
+                                    <!--<field name="order_id"/>-->
+                                    <field name="ref_achat"/>
                                     <field name="product_id"/>
                                     <field name="description"/>
                                     <field name="product_uom_qty"/>
@@ -33,18 +34,26 @@
                                     <field name="price_unit"/>
                                     <field name="currency_id"/>
                                     <field name="price_subtotal"/>
+                                    <!--  <field name="total_achat"/>-->
                                 </tree>
                                 <form>
-                                    <field name="order_id"/>
-                                    <field name="product_id"/>
-                                    <field name="description"/>
-                                    <field name="product_uom_qty"/>
-                                    <field name="price_unit"/>
-                                    <field name="price_unit"/>
-                                    <field name="currency_id"/>
-                                    <field name="price_subtotal"/>
+                                    <group>
+                                        <field name="ref_achat"/>
+                                        <!--                                        <field name="order_id"/>-->
+                                        <field name="product_id"/>
+                                        <field name="description"/>
+                                        <field name="product_uom_qty"/>
+                                        <field name="price_unit"/>
+                                        <field name="price_unit"/>
+                                        <field name="currency_id"/>
+                                        <field name="price_subtotal"/>
+                                    </group>
+
                                 </form>
                             </field>
+                            <tree>
+                                <field name="total" style="float: right"/>
+                            </tree>
                         </page>
                     </notebook>
                 </sheet>
@@ -58,7 +67,7 @@
         <field name="model">sale.order</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
+                <field name="ref_commande"/>
                 <field name="partner_id"/>
                 <field name="order_line_ids"/>
                 <field name="date_order"/>

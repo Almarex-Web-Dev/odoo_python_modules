@@ -13,7 +13,6 @@ class StockModel(models.Model):
     maximum_stock_level = fields.Integer(string='Niveau de stock maximum', default=175)
     reorder_level = fields.Integer(compute='_get_qtn', string='Niveau de réapprovisionnement')
 
-    @api.constrains('fournisseur')
     @api.depends('maximum_stock_level')
     def _get_qtn(self):
         for rec in self:

@@ -25,32 +25,35 @@
                             color: #fff;
                             }
                         </style>
-                        <h2>
-                            <strong>Reference de Commande:</strong>
-                            <span t-field="sales.name"/>
-                        </h2>
+                        <div>
+                            <h4>
+                                <strong>Reference de Commande</strong>
+                            </h4>
+                            <span t-field="sales.ref_commande"/>
+                        </div>
+                        <br/>
                         <div>
                             <div>
-                                <h3>
+                                <h5>
                                     <strong>Customer:</strong>
                                     <span t-field="sales.partner_id"/>
-                                </h3>
-                                <h3>
+                                </h5>
+                                <h5>
                                     <strong>Country:</strong>
                                     <span t-field="sales.partner_id.country_id"/>
-                                </h3>
-                                <h3>
+                                </h5>
+                                <h5>
                                     <strong>State:</strong>
                                     <span t-field="sales.partner_id.state_id"/>
-                                </h3>
-                                <h3>
+                                </h5>
+                                <h5>
                                     <strong>Street:</strong>
                                     <span t-field="sales.partner_id.street"/>
-                                </h3>
-                                <h3>
+                                </h5>
+                                <h5>
                                     <strong>Numero de Telephone:</strong>
                                     <span t-field="sales.partner_id.phone"/>
-                                </h3>
+                                </h5>
                             </div>
 
                             <div t-if="sales.state == 'done'">
@@ -72,6 +75,7 @@
                                     <th>Subtotal</th>
                                 </tr>
                             </thead>
+
                             <tbody>
                                 <t t-set="sales" t-value="sales.mapped('order_line_ids')"/>
                                 <tr t-foreach="sales" t-as="sale">

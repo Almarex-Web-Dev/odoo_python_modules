@@ -4,6 +4,6 @@
             model="sale.order"
             string="sale Order report"
             name="my_stock.customer_sales_order_template"
-            file="parking.customer_sales_order_template"
+            file="my_stock.customer_sales_order_template"
             report_type="qweb-pdf"/>
 </odoo>
