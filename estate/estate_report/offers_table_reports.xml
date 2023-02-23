@@ -50,7 +50,6 @@
                                         <span t-field="offer.status"/>
                                     </td>
                                 </tr>
-
                             </tbody>
                         </table>
                     </div>

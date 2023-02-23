@@ -17,7 +17,7 @@
                             <field name="partner_id"/>
                             <!--<field name="order_line_ids"/>-->
                             <field name="date_order"/>
-                            <field name="state"/>
+                            <!--                            <field name="state"/>-->
                         </group>
                     </group>
                     <notebook>
@@ -48,12 +48,12 @@
                                         <field name="currency_id"/>
                                         <field name="price_subtotal"/>
                                     </group>
-
                                 </form>
                             </field>
-                            <tree>
-                                <field name="total" style="float: right"/>
-                            </tree>
+                            <div style="float: right">
+                                <strong style="margin-right: 15px">Total:</strong>
+                                <field name="total"/>
+                            </div>
                         </page>
                     </notebook>
                 </sheet>

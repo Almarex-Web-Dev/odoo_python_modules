@@ -2,20 +2,20 @@
     <template id="properties_details">
         <t t-call="website.layout">
             <t t-set="title">Real Estate Property</t>
-            <div class="hero_bg">
+            <section class="bg">
                 <div class="container_section">
                     <div class="contenu_wrapper">
                         <div class="contenu_description">
                             <div role="heading" class='heading_wrapper'>
                                 <span>
                                     <svg
-                    class="icon_maison"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 576 512"
-                  >
+                                            class="icon_maison"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 576 512"
+                                    >
                                         <path
-                      d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
-                    />
+                                                d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+                                        />
                                     </svg>
                                 </span>
                                 <span class="heading_texte">
@@ -33,11 +33,11 @@
                             <!-- Bouton de Enquiry -->
                             <div class='bouton_action'>
 
-                                
+
                                 <a class="flat_button" t-attf-href="#">
                                     <div>
-                                        <span class="bg" />
-                                        <span class="base" />
+                                        <span class="bg"/>
+                                        <span class="base"/>
                                         <span class='texte'>
                                             Make an Enquiry
                                         </span>
@@ -46,12 +46,12 @@
                                 <!-- Play bouton -->
                                 <a class="play_button" t-attf-href="#">
                                     <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
-                  >
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 448 512"
+                                    >
                                         <path
-                      d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
-                    />
+                                                d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+                                        />
                                     </svg>
                                 </a>
                             </div>
@@ -59,34 +59,31 @@
                         <!--Image hero -->
                         <div class="image_hero">
                             <img
-                src="https://tunatheme.com/tf/html/quarter-preview/quarter/img/slider/62.jpg"
-              />
+                                    src="https://tunatheme.com/tf/html/quarter-preview/quarter/img/slider/62.jpg"
+                            />
                         </div>
                     </div>
                 </div>
-            </div>
-
-
+            </section>
             <!-- section pour chercher des maison disponible -->
-
             <section class="container form_wrapper">
                 <div class="form_group_wrapper">
                     <form
-            method="POST"
-            action="/properties/available"
-            role="form"
-          >
+                            method="POST"
+                            action="/properties/available"
+                            role="form"
+                    >
                         <div class="form-group">
                             <!--  -->
                             <select
-                class="form-control form-control-alternative"
-                name="pays"
-                required="True"
-              >
+                                    class="form-control form-control-alternative"
+                                    name="pays"
+                                    required="True"
+                            >
                                 <option value="">Choose Area</option>
                                 <t t-foreach="pays" t-as="pays">
                                     <option>
-                                        <t t-esc="pays.name" />
+                                        <t t-esc="pays.name"/>
                                     </option>
                                 </t>
                             </select>
@@ -99,27 +96,29 @@
                             <option value="new">New</option>
                             <option value="sold">Sold</option>
                             <option
-                value="offer received"
-              >Offer Received</option>
+                                    value="offer received"
+                            >Offer Received
+                            </option>
                             <option
-                value="offer accepted"
-              >Offer Accepted</option>
+                                    value="offer accepted"
+                            >Offer Accepted
+                            </option>
                             <option value="cancel">Cancel</option>
                         </select>
 
                         <!-- Property Type -->
 
                         <select
-              id="type"
-              name="property_type"
-              required="1"
-              class="form-control chosen-select"
-            >
+                                id="type"
+                                name="property_type"
+                                required="1"
+                                class="form-control chosen-select"
+                        >
 
                             <option value="">Property Type</option>
                             <t t-foreach="prop_type" t-as="props">
                                 <option>
-                                    <t t-esc="props.name" />
+                                    <t t-esc="props.name"/>
                                 </option>
                             </t>
                         </select>
@@ -127,10 +126,10 @@
                         <!-- submit button -->
                         <button class="flat_button" type="submit">
                             <div>
-                                <span class="bg" />
-                                <span class="base" />
+                                <span class="bg"/>
+                                <span class="base"/>
                                 <span class='texte'>
-                                    FIND NOW 
+                                    FIND NOW
                                 </span>
                             </div>
                         </button>
@@ -139,84 +138,38 @@
                     </form>
                 </div>
             </section>
+
+            <section class="our_services bg">
+                <h1>Hello There</h1>
+                <h1>Hello There</h1>
+                <h1>Hello There</h1>
+                <h1>Hello There</h1>
+                <h1>Hello There</h1>
+                <h1>Hello There</h1>
+                <h1>Hello There</h1>
+                <h1>Hello There</h1>
+                <h1>Hello There</h1>
+                <h1>Hello There</h1>
+                <h1>Hello There</h1>
+                <h1>Hello There</h1>
+                <h1>Hello There</h1>
+            </section>
         </t>
     </template>
 
 
     <!--  -->
-
     <record id="home_page" model="website.page">
         <field name="name">Home page</field>
         <field name="website_published">True</field>
         <field name="url">/home</field>
-        <field name="view_id" ref="properties_details" />
+        <field name="view_id" ref="properties_details"/>
     </record>
 
     <record id="home_page_link" model="website.menu">
         <field name="name">Home</field>
-        <field name="page_id" ref="home_page" />
-        <field name="parent_id" ref="website.main_menu" />
+        <field name="page_id" ref="home_page"/>
+        <field name="parent_id" ref="website.main_menu"/>
         <field name="sequence" type="int">10</field>
     </record>
 </odoo>
-<!--    <template id="index">-->
-<!--        <t t-call="website.layout">-->
-<!--            <t t-set="title">Estate</t>-->
-<!--            <div class="oe_structure">-->
-<!--                <div class="container">-->
-<!--                    <t t-call="estate.souza"/>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </t>-->
-<!--    </template>-->
-
-
-<!--    <template id="souza">-->
-<!--        <h1 style="text-align: center">Estate Properties</h1>-->
-<!--        <t t-foreach="properties" t-as="props">-->
-<!--            <p t-if="props.state == 'sold'">-->
-<!--                <a t-attf-href="/home/{{ slug(props) }}">-->
-<!--                    <t t-esc="props.name"/> -->
-<!--                </a>-->
-<!--            </p>-->
-<!--        </t>-->
-<!--    </template>-->
-<!--
-                 <h1 style="margin-bottom: 25px">SOLD ESTATE PROPERTIES</h1>
-                                    <table style="width: 100%; border: 1px solid #000; padding: 10px;">
-                                        <thead style="border: 1px solid #dddddd; text-align: left; padding: 8px;">
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Price</th>
-                                                <th>Partner</th>
-                                                <th>Expected Price</th>
-                                                <th>Selling Price</th>
-                                                <th>Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tr>
-                                            <td>
-                                                <t t-esc="props.name"/>
-                                            </td>
-                                            <td>
-                                                <t t-esc="props.price"/>
-                                            </td>
-                                            <td>
-                                                <t t-esc="props.buyer_id.name"/>
-                                            </td>
-                                            <td>
-                                                <t t-esc="props.expected_price"/>
-                                            </td>
-                                            <td>
-                                                <t t-esc="props.selling_price"/>
-                                            </td>
-                                            <td>
-                                                <t t-esc="props.state"/>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-
-
-                -->

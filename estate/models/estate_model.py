@@ -34,12 +34,10 @@ class EstateModel(models.Model):
     status = fields.Selection([("new", "New"), ("cancel", "Cancelled")], string="Status", default="new")
     property_image = fields.Binary(string="Property Image")
 
-
     # Property Location
     # location = fields.Selection([('london', "London"), ('qatar', "Qatar"),('spain', "Spain"),
     #                             ('london', "London"),('london', "London")])
-    
-    
+
     # Delete an offer where the state of the offer is not equal to sold or offer accepted
     def unlink(self):
         print("Item is successfully deleted !!!")
@@ -58,10 +56,10 @@ class EstateModel(models.Model):
     total_area = fields.Integer(compute='_calc_total_', string='Total Area (sqm)')
     user_id = fields.Many2one('res.users', string='user offers')
     best_price = fields.Integer(string="Best offer", readonly=True)
-    
+
     country = fields.Many2one(comodel_name='res.country', string='Country',
                               help='Select Country', ondelete='restrict')
-    
+
     # city_id = fields.Many2one('res.city', 'City',  ondelete='restrict')
     state_id = fields.Many2one('res.country.state', string='State', domain="[('country_id', '=?', country)]")
     city = fields.Char('City', required=True)
@@ -69,7 +67,6 @@ class EstateModel(models.Model):
     street = fields.Char('Street')
     house_number_or_name = fields.Char('House Number Or Name', required=True)
 
-    
     # country_id = fields.Many2one('res.country', string='Country', domain=[('code', 'in', ADYEN_AVAILABLE_COUNTRIES)], required=True)
     # country_code = fields.Char(related='country_id.code')
     # state_code = fields.Char(related='state_id.code')

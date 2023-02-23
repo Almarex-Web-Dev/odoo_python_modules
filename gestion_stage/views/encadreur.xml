@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!--  FORM VIEW OF ETABLISSMENT DE STAGE MODEL-->
+    <record id="encadreur_form_view_model" model="ir.ui.view">
+        <field name="name">encadreur.form.view</field>
+        <field name="model">encadreur.stage</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+<!--                        <field name="name"/>-->
+<!--                        <field name="website"/>-->
+<!--                        <field name="address"/>-->
+<!--                        <field name="phone"/>-->
+<!--                        <field name="email"/>-->
+<!--                        <field name="description"/>-->
+                    </group>
+                </sheet>
+                <!-- SOMETHINGS WILL GO HERE... -->
+            </form>
+        </field>
+    </record>
+
+    <!--  FORM VIEW OF ETABLISSMENT DE STAGE MODEL-->
+    <record id="encadreur_tree_view_model" model="ir.ui.view">
+        <field name="name">encadreur.tree.view</field>
+        <field name="model">encadreur.stage</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- SOMETHINGS WILL GO HERE... -->
+<!--                <field name="name"/>-->
+<!--                <field name="website"/>-->
+<!--                <field name="address"/>-->
+<!--                <field name="phone"/>-->
+<!--                <field name="email"/>-->
+<!--                <field name="description"/>-->
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- ETABLISSMENT ACTION VIEW DECLARATION   -->
+    <record id="encadreur_stage_action_record" model="ir.actions.act_window">
+        <field name="name">Encadreur</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">encadreur.stage</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{'search_default_new': True}</field>
+        <field name="help" type="html">
+            <p class="oe_nocontent_smilling_face">
+                Ajouter Votre Etablissement
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="model_etablissement_stage_menu_root" name="Stage" sequence="10"/>
+
+    <menuitem id="encadreur_menu" name="Encadreur" parent="model_etablissement_stage_menu_root"
+              action="encadreur_stage_action_record"/>
+</odoo>
+
+
+

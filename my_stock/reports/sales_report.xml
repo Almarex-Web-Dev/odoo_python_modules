@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <report id="customer_sales_report"
-            model="sale.order"
-            string="sale Order report"
-            name="my_stock.customer_sales_order_template"
-            file="my_stock.customer_sales_order_template"
-            report_type="qweb-pdf"/>
+        <report
+                id="custom_report_order"
+                string="Order Report"
+                model="sale.order"
+                report_type="qweb-pdf"
+                name="my_stock.order_report_template"
+                file="my_stock.order_report_template"
+        />
+<!--    <report-->
+<!--            id="custom_report_order"-->
+<!--            string="Order Report"-->
+<!--            model="sale.order"-->
+<!--            report_type="qweb-pdf"-->
+<!--            name="my_stock.order_report_template"-->
+<!--            file="order_report.order_report_template"-->
+<!--    />-->
 </odoo>

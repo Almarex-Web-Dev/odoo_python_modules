@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="customer_sales_order_template">
+    <template id="order_report_template">
         <t t-foreach="docs" t-as="sales">
             <t t-call="web.html_container">
                 <t t-call="web.external_layout">
@@ -10,7 +10,7 @@
                             font-family: arial, sans-serif;
                             border-collapse: collapse;
                             width: 100%;
-                            margin-top: 100px;
+                            margin-top: 50px;
                             }
 
                             td, th {
@@ -20,48 +20,44 @@
                             }
 
                             tr:nth-child(even) {
-                            <!-- background-color: #dddddd;-->
-                            background-color: #5c5c5c;
-                            color: #fff;
+                            background-color: #dddddd;
                             }
                         </style>
                         <div>
                             <h4>
                                 <strong>Reference de Commande</strong>
                             </h4>
-                            <span t-field="sales.ref_commande"/>
-                        </div>
-                        <br/>
-                        <div>
-                            <div>
-                                <h5>
-                                    <strong>Customer:</strong>
-                                    <span t-field="sales.partner_id"/>
-                                </h5>
-                                <h5>
-                                    <strong>Country:</strong>
-                                    <span t-field="sales.partner_id.country_id"/>
-                                </h5>
-                                <h5>
-                                    <strong>State:</strong>
-                                    <span t-field="sales.partner_id.state_id"/>
-                                </h5>
-                                <h5>
-                                    <strong>Street:</strong>
-                                    <span t-field="sales.partner_id.street"/>
-                                </h5>
-                                <h5>
-                                    <strong>Numero de Telephone:</strong>
-                                    <span t-field="sales.partner_id.phone"/>
-                                </h5>
-                            </div>
+                            <p>
+                                <span t-field="sales.ref_commande"/>
+                            </p>
+                            <p>
+                                <strong>Customer:</strong>
+                                <span t-field="sales.partner_id"/>
+                            </p>
+                            <p>
+                                <strong>Country:</strong>
+                                <span t-field="sales.partner_id.country_id"/>
+                            </p>
+                            <p>
+                                <strong>State:</strong>
+                                <span t-field="sales.partner_id.state_id"/>
+                            </p>
+                            <p>
+                                <strong>Street:</strong>
+                                <span t-field="sales.partner_id.street"/>
+                            </p>
+                            <p>
+                                <strong>Telephone:</strong>
+                                <span t-field="sales.partner_id.phone"/>
+                            </p>
+                            <p>
+                                <strong>Date order:</strong>
+                                <span t-field="sales.date_order"/>
+                            </p>
 
-                            <div t-if="sales.state == 'done'">
-                                <span>!!! Invoice has already been created!!!</span>
-                            </div>
+                            <br/>
                         </div>
 
-                        <!--    SALES ORDER TABLE  -->
                         <table class="table">
                             <thead>
                                 <tr>
@@ -75,35 +71,33 @@
                                     <th>Subtotal</th>
                                 </tr>
                             </thead>
-
                             <tbody>
-                                <t t-set="sales" t-value="sales.mapped('order_line_ids')"/>
-                                <tr t-foreach="sales" t-as="sale">
-                                    <td>
-                                        <span t-field="sale.SN"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="sale.order_id"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="sale.product_id"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="sale.description"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="sale.product_uom_qty"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="sale.price_unit"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="sale.currency_id"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="sale.price_subtotal"/>
-                                    </td>
-                                </tr>
+                                <t t-foreach="sales.order_line_ids" t-as="sale">
+                                    <tr>
+                                        <td>
+                                            <span t-esc="sale_index + 1"/>
+                                            <!--<span t-field="sale.SN"/>-->
+                                        </td>
+                                        <td>
+                                            <span t-field="sale.ref_achat"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="sale.product_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="sale.description"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="sale.product_uom_qty"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="sale.price_unit"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="sale.currency_id"/>
+                                        </td>
+                                    </tr>
+                                </t>
                             </tbody>
                         </table>
                     </div>

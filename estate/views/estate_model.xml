@@ -10,7 +10,7 @@
                 <field name="name"/>
                 <field name="type"/>
                 <field name="postcode"/>
-                <field name="tags_ids" widget="many2many_tags"/>
+                <field name="tags_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="bedrooms"/>
                 <field name="living_area"/>
                 <field name="expected_price"/>
