@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="stage_form_view_model" model="ir.ui.view">
+        <field name="name">gestion.stage.form.view</field>
+        <field name="model">gestion.stage.model</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                         <field name="matricule_id"/>
+                        <field name="description"/>
+                        <field name="entreprise_id"/>
+                        <field name="date_debut"/>
+                        <field name="date_fin"/>
+                        <field name="filiere_id"/>
+                        <field name="missions"/>
+                        <field name="competences"/>
+                    </group>
+                </sheet>
+                <!-- SOMETHINGS WILL GO HERE... -->
+            </form>
+        </field>
+    </record>
+
+    <record id="stage_tree_view_model" model="ir.ui.view">
+        <field name="name">gestion.stage.tree.view</field>
+        <field name="model">gestion.stage.model</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                 <field name="matricule_id"/>
+                <field name="entreprise_id"/>
+                <field name="description"/>
+                <field name="date_debut"/>
+                <field name="date_fin"/>
+                <field name="filiere_id"/>
+                <field name="missions"/>
+                <field name="competences"/>
+
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- ETABLISSMENT ACTION VIEW DECLARATION   -->
+    <record id="gestion_stage_action_record" model="ir.actions.act_window">
+        <field name="name">Stage</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">gestion.stage.model</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{'search_default_new': True}</field>
+        <field name="help" type="html">
+            <p class="oe_nocontent_smilling_face">
+                Stage
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="model_etablissement_stage_menu_root" name="Stage" sequence="10"/>
+
+    <menuitem id="gestion_stage_menu" name="Stage" parent="model_etablissement_stage_menu_root"
+              action="gestion_stage_action_record"/>
+</odoo>
+
+
+

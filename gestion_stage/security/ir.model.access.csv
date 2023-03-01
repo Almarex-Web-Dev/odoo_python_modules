@@ -1,3 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_user_etablissement_moodel,access.etablissement.stage,model_etablissement_stage,,1,1,1,1
 access_user_encadreur_moodel,access.encadreur.stage,model_encadreur_stage,,1,1,1,1
+access_user_filiere_moodel,access.filiere.stage,model_filiere_stage,,1,1,1,1
+access_user_etudiant_moodel,access.etudiant.stage,model_etudiant_stage,,1,1,1,1
+access_user_gestion_stage_moodel,access.gestion.stage.model,model_gestion_stage_model,,1,1,1,1
+access_user_entreprise_stage_moodel,access.entreprise.stage,model_entreprise_stage,,1,1,1,1

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!--  FORM VIEW OF ETABLISSMENT DE STAGE MODEL-->
+    <record id="entreprise_form_view_model" model="ir.ui.view">
+        <field name="name">entreprise.form.view</field>
+        <field name="model">entreprise.stage</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="adresse"/>
+                        <field name="website"/>
+                        <field name="phone"/>
+                        <field name="domaine_activite"/>
+                        <field name="tuteur"/>
+                        <field name="specialite"/>
+                        <!-- <field name="contacts"/>-->
+                        <!--                         <field name="stages"/>-->
+                    </group>
+                </sheet>
+                <!-- SOMETHINGS WILL GO HERE... -->
+            </form>
+        </field>
+    </record>
+
+    <!--  FORM VIEW OF ETUDIANT DE STAGE MODEL-->
+    <record id="entreprise_tree_view_model" model="ir.ui.view">
+        <field name="name">entreprise.tree.view</field>
+        <field name="model">entreprise.stage</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- SOMETHINGS WILL GO HERE... -->
+                <field name="name"/>
+                <field name="adresse"/>
+                <field name="website"/>
+                <field name="phone"/>
+                <field name="domaine_activite"/>
+                <field name="tuteur"/>
+                <field name="specialite"/>
+                <!-- <field name="contacts"/>-->
+                <!--                <field name="stages"/>-->
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- ETABLISSMENT ACTION VIEW DECLARATION   -->
+    <record id="entreprise_stage_action_record" model="ir.actions.act_window">
+        <field name="name">Entreprise</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">entreprise.stage</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{'search_default_new': True}</field>
+        <field name="help" type="html">
+            <p class="oe_nocontent_smilling_face">
+                Ajouter Votre Entreprise
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="model_etablissement_stage_menu_root" name="Stage" sequence="10"/>
+
+    <menuitem id="entreprise_menu" name="Entreprise" parent="model_etablissement_stage_menu_root"
+              action="entreprise_stage_action_record"/>
+</odoo>
+
+
+

@@ -9,12 +9,16 @@
             <form>
                 <sheet>
                     <group>
-<!--                        <field name="name"/>-->
-<!--                        <field name="website"/>-->
-<!--                        <field name="address"/>-->
-<!--                        <field name="phone"/>-->
-<!--                        <field name="email"/>-->
-<!--                        <field name="description"/>-->
+                        <group>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="specialite"/>
+<!--                        <field name="stages_encadres"/>-->
+                        </group>
+                        <group>
+                            <field name="encadreur_image" widget="image"/>
+                        </group>
                     </group>
                 </sheet>
                 <!-- SOMETHINGS WILL GO HERE... -->
@@ -29,12 +33,11 @@
         <field name="arch" type="xml">
             <tree>
                 <!-- SOMETHINGS WILL GO HERE... -->
-<!--                <field name="name"/>-->
-<!--                <field name="website"/>-->
-<!--                <field name="address"/>-->
-<!--                <field name="phone"/>-->
-<!--                <field name="email"/>-->
-<!--                <field name="description"/>-->
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="specialite"/>
+<!--                <field name="stages_encadres"/>-->
             </tree>
         </field>
     </record>

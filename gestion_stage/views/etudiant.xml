@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!--  FORM VIEW OF ETABLISSMENT DE STAGE MODEL-->
+    <record id="etudiant_form_view_model" model="ir.ui.view">
+        <field name="name">etudiant.form.view</field>
+        <field name="model">etudiant.stage</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="matricule"/>
+                            <field name="filiere"/>
+                            <field name="date_naissance"/>
+                            <field name="adresse"/>
+                            <field name="code_postal"/>
+                            <field name="state"/>
+                            <field name="country"/>
+                            <field name="statut"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="niveau_etude"/>
+                        </group>
+                        <group>
+                            <field name="image"  widget="image"/>
+                        </group>
+                    </group>
+                </sheet>
+                <!-- SOMETHINGS WILL GO HERE... -->
+            </form>
+        </field>
+    </record>
+
+    <!--  FORM VIEW OF ETUDIANT DE STAGE MODEL-->
+    <record id="filiere_tree_view_model" model="ir.ui.view">
+        <field name="name">etudiant.tree.view</field>
+        <field name="model">etudiant.stage</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- SOMETHINGS WILL GO HERE... -->
+                <field name="name"/>
+                <field name="matricule"/>
+                <field name="filiere"/>
+                <field name="date_naissance"/>
+                <field name="adresse"/>
+                <field name="code_postal"/>
+                <field name="state"/>
+                <field name="country"/>
+                <field name="statut"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="niveau_etude"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- ETABLISSMENT ACTION VIEW DECLARATION   -->
+    <record id="etudiant_stage_action_record" model="ir.actions.act_window">
+        <field name="name">Etudiant</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">etudiant.stage</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{'search_default_new': True}</field>
+        <field name="help" type="html">
+            <p class="oe_nocontent_smilling_face">
+                Ajouter Votre Etudiant
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="model_etablissement_stage_menu_root" name="Stage" sequence="10"/>
+
+    <menuitem id="etudiant_menu" name="Etudiant" parent="model_etablissement_stage_menu_root"
+              action="etudiant_stage_action_record"/>
+</odoo>
+
+
+

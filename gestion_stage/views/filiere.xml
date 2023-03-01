@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!--  FORM VIEW OF ETABLISSMENT DE STAGE MODEL-->
+    <record id="filiere_form_view_model" model="ir.ui.view">
+        <field name="name">filiere.form.view</field>
+        <field name="model">filiere.stage</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <!--                        <field name="stages"/>-->
+                    </group>
+                </sheet>
+                <!-- SOMETHINGS WILL GO HERE... -->
+            </form>
+        </field>
+    </record>
+
+    <!--  FORM VIEW OF ETABLISSMENT DE STAGE MODEL-->
+    <record id="filiere_tree_view_model" model="ir.ui.view">
+        <field name="name">filiere.tree.view</field>
+        <field name="model">filiere.stage</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- SOMETHINGS WILL GO HERE... -->
+                <field name="name"/>
+                <field name="description"/>
+                <!--                <field name="stages"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <!-- ETABLISSMENT ACTION VIEW DECLARATION   -->
+    <record id="filiere_stage_action_record" model="ir.actions.act_window">
+        <field name="name">Filiere</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">filiere.stage</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{'search_default_new': True}</field>
+        <field name="help" type="html">
+            <p class="oe_nocontent_smilling_face">
+                Ajouter Votre Filiere
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="model_etablissement_stage_menu_root" name="Stage" sequence="10"/>
+
+    <menuitem id="filiere_menu" name="Filiere" parent="model_etablissement_stage_menu_root"
+              action="filiere_stage_action_record"/>
+</odoo>
+
+
+

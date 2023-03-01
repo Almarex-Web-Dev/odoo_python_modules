@@ -7,5 +7,7 @@ class Encadreur(models.Model):
 
     name = fields.Char(string='Nom d\'encadreur', required=True)
     email = fields.Char(string='Adresse e-mail', required=True)
-    telephone = fields.Char(string='Numéro de téléphone', required=True)
-
+    phone = fields.Char(string='Numéro de téléphone', required=True)
+    specialite = fields.Char(string='Spécialité', required=True)
+    # stages_encadres = fields.One2many('gestion.stage.model', 'encadreur_id', string='Stages encadrés')
+    encadreur_image = fields.Binary(string='Image d\'encadreur')
